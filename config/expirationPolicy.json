@@ -1,0 +1,15 @@
+{
+  "dairy": 5,
+  "bakery": 1,
+  "beverages": 10,
+  "snacks": 15,
+  "fruits": 2,
+  "vegetables": 2,
+  "meat": 2,
+  "seafood": 20,
+  "frozen_foods": 30,
+  "personal_care": 90,
+  "canned_goods": 60,
+  "spices_and_condiments": 60,
+  "grains_and_pasta": 60
+}
