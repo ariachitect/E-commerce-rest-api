@@ -1,6 +1,4 @@
 const express = require('express');
-const productController = require('./controllers/productController');
-
 const productRouter = require('./routes/productRoutes');
 
 const app = express();
@@ -10,3 +8,4 @@ app.use(express.json());
 app.use('/api/v1/products', productRouter);
 //exporting
 module.exports = app;
+//This is a message for testing git tracking in VS
