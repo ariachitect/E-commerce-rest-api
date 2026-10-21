@@ -6,11 +6,7 @@ const mongoose = require('mongoose');
 
 const dataBase = process.env.DATABASE;
 mongoose
-  .connect(dataBase, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
+  .connect(dataBase)
   .then(() => console.log('DB connected successfully !'));
 const app = require('./app');
 

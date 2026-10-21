@@ -12,7 +12,7 @@ const Product = require('../models/productModel');
 const dotenv = require('dotenv');
 const { log } = require('console');
 
-dotenv.config({ path: `${__dirname}/../config.env` });
+dotenv.config({ path: `${__dirname}/../config/config.env` });
 
 const DataString = fs.readFileSync(
   `${__dirname}/./sample_products.json`,
@@ -25,11 +25,7 @@ const importer = async function() {
   try {
     //connecting to mongoose
 
-    await mongoose.connect(process.env.DATABASE, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
+    await mongoose.connect(process.env.DATABASE);
     log('--- Successfully connected to the Database!');
     log('--- Deleting duplicate keys ...');
     await Product.deleteMany();
