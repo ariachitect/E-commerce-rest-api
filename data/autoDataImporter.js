@@ -12,9 +12,12 @@ const Product = require('../models/productModel');
 const dotenv = require('dotenv');
 const { log } = require('console');
 
-dotenv.config({ path: '../config.env' });
+dotenv.config({ path: `${__dirname}/../config.env` });
 
-const DataString = fs.readFileSync('./sample_products.json', 'utf-8');
+const DataString = fs.readFileSync(
+  `${__dirname}/./sample_products.json`,
+  'utf-8'
+);
 
 const Data = JSON.parse(DataString);
 
@@ -22,7 +25,7 @@ const importer = async function() {
   try {
     //connecting to mongoose
 
-    await mongoose.connect(process.env.DATABASE_LOCAL, {
+    await mongoose.connect(process.env.DATABASE, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false

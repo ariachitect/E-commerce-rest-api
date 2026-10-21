@@ -2,3 +2,5 @@
 node_modules/
 # Environment variables and secrets
 *.env
+# macos foldering file
+.DS_Store
