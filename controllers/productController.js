@@ -41,7 +41,6 @@ exports.expierSoonProducts = async (req, res) => {
     //execute the query
     const filteredResult = await productFeatures.query;
     const result = filteredResult.filter(element => element.detectExpirSoon());
-    result.fields();
     res.status(200).json({
       status: 'success',
       result: result.length,
