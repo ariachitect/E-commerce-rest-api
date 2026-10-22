@@ -269,18 +269,32 @@ exports.deleteProduct = async (req, res) => {
   }
 };
 
-//didn't work last time
 exports.patchProduct = async (req, res) => {
   try {
     const productId = req.params.id;
     const newData = req.body;
-    const response = await Product.findByIdAndUpdate(productId, newData, {
+
+    //Old methode‌ (It couldn't handel this in validator)
+    /*   const response = await Product.findByIdAndUpdate(productId, newData, {
       runValidators: true,
       new: true
     });
+    */
+    //New methode
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({
+        status: 'failed',
+
+        message: 'Product not found'
+      });
+    }
+    Object.assign(product, newData);
+    await product.save();
+
     res.status(200).json({
       status: 'success',
-      data: response
+      data: product
     });
   } catch (err) {
     res.status(404).json({
