@@ -99,7 +99,7 @@ You can now test the API using the [Postman documentation](https://documenter.g
 
 ## 📄 Project Report
 
-For a more detailed explanation of the project's architecture, request flow, and implementation, please refer to [project_report.pdf](https://github.com/ariachitect/E-commerce-rest-api/tree/master/project_documents/Project_Report.pdf).
+For a more detailed explanation of the project's architecture, request flow, and implementation, please refer to [project_report.pdf](https://github.com/ariachitect/E-commerce-rest-api/blob/master/project_documents/Project_Reoprt.pdf).
 
 ## 💬 Feedback & Contact
 
